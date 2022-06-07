@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Lexical Analyzer and Parser</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Lexical Analyzer and Parser</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+      </ul>
+    </div>
+  </nav>
+  <div class="text-center" style="padding-top: 30px; ">
+    <h1 style="font-weight: bold;">Spanish</h1>
+    <h3>Lexical Analyzer & Grammar Check</h3>
+  </div>
+  <div style="padding-top: 10px; ">
+    <div class="row justify-content-center">
+      <div class="card col-3 m-4" style="width: auto;">
+        <div class="card-header text-center" style="font-weight: bold;">
+          Subject
+        </div>
+        <ul class="list-group list-group-flush text-center">
+          <li class="list-group-item">Yo(aku)</li>
+          <li class="list-group-item">Madre(Ibu)</li>
+          <li class="list-group-item">Padre(Ayah)</li>
+          <li class="list-group-item">Ellos(Mereka)</li>
+          <li class="list-group-item">Nosotros(kami)</li>
+        </ul>
+      </div>
+      <div class="card col-3 m-4" style="width: auto;">
+        <div class="card-header text-center" style="font-weight: bold;">
+          Verb
+        </div>
+        <ul class=" list-group list-group-flush text-center">
+          <li class="list-group-item">Planta(menanam)</li>
+          <li class="list-group-item">Comer(makan)</li>
+          <li class="list-group-item">Comprar(membeli)</li>
+          <li class="list-group-item">Usar(memakai)</li>
+          <li class="list-group-item">Buscar(mencari)</li>
+        </ul>
+      </div>
+      <div class="card col-3 m-4" style="width: 18rem;">
+        <div class="card-header text-center" style="font-weight: bold;">
+          Noun
+        </div>
+        <ul class="list-group list-group-flush text-center">
+          <li class="list-group-item">Flor(bunga)</li>
+          <li class="list-group-item">Arroz(nasi)</li>
+          <li class="list-group-item">Zapato(sepatu)</li>
+          <li class="list-group-item">Vestir(baju)</li>
+          <li class="list-group-item">libro(buku)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="row justify-content-center" style="padding-top: 20px;">
+    <form action="" id="form">
+      <input class="" id="sentence" type="text" placeholder="Masukkan kalimat disini . . ."
+        style="width: 500px; height: 46px; border-radius: 7px; border-color: rgb(160, 160, 160); padding-left: 20px;">
+      <button class="" type="submit" id="checkButton"
+        style="height: 46px; width: 100px; border-radius: 7px;background-color: rgb(57, 57, 230); font-weight: bold; color: antiquewhite; border:none; margin-left: 10px;">
+        Check
+      </button>
+    </form>
+  </div>
+
+  <div class="text-center p-5">
+    <h1 id="laTitle" class="d-none">Lexical Analyzer</h1>
+    <span class="mb-5 inline-block" id="resultLa"></span>
+    <h1 id="parserTitle" class="d-none">Parser</h1>
+    <span class="mb-5 inline-block" id="resultParser"></span>
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+<script src="./tubes_tba.js"></script>
+
+</html>
