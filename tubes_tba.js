@@ -178,22 +178,38 @@ const checkSentence = (sentence) => {
         tokens.push('EOS')
 
         // Symbol Definition
-        let nonTerminals = ['SB', 'NN', 'VB']
+        let nonTerminals = ['S', 'SB', 'NN', 'VB']
         let terminals = ['yo', 'madre', 'padre', 'ellos', 'nosotros', 'flor', 'arroz', 'zapato', 'vestir', 'libro', 'planta', 'comer', 'comprar', 'buscar', 'usar']
 
         // Parse Table Definition
         let parseTable = {}
+        parseTable[['S', 'yo']] = ['SB', 'VB', 'NN']
+        parseTable[['S', 'madre']] = ['SB', 'VB', 'NN']
+        parseTable[['S', 'padre']] = ['SB', 'VB', 'NN']
+        parseTable[['S', 'ellos']] = ['SB', 'VB', 'NN']
+        parseTable[['S', 'nosotros']] = ['SB', 'VB', 'NN']
+        parseTable[['S', 'flor']] = ['error']
+        parseTable[['S', 'arroz']] = ['error']
+        parseTable[['S', 'zapato']] = ['error']
+        parseTable[['S', 'vestir']] = ['error']
+        parseTable[['S', 'libro']] = ['error']
+        parseTable[['S', 'planta']] = ['error']
+        parseTable[['S', 'comer']] = ['error']
+        parseTable[['S', 'comprar']] = ['error']
+        parseTable[['S', 'buscar']] = ['error']
+        parseTable[['S', 'usar']] = ['error']
+        parseTable[['S', 'EOS']] = ['error']
 
-        parseTable[['SB', 'yo']] = ['NN', 'VB', 'NN']
-        parseTable[['SB', 'madre']] = ['NN', 'VB', 'NN']
-        parseTable[['SB', 'padre']] = ['NN', 'VB', 'NN']
-        parseTable[['SB', 'ellos']] = ['NN', 'VB', 'NN']
-        parseTable[['SB', 'nosotros']] = ['NN', 'VB', 'NN']
-        parseTable[['SB', 'flor']] = ['NN', 'VB', 'NN']
-        parseTable[['SB', 'arroz']] = ['NN', 'VB', 'NN']
-        parseTable[['SB', 'zapato']] = ['NN', 'VB', 'NN']
-        parseTable[['SB', 'vestir']] = ['NN', 'VB', 'NN']
-        parseTable[['SB', 'libro']] = ['NN', 'VB', 'NN']
+        parseTable[['SB', 'yo']] = ['yo']
+        parseTable[['SB', 'madre']] = ['madre']
+        parseTable[['SB', 'padre']] = ['padre']
+        parseTable[['SB', 'ellos']] = ['ellos']
+        parseTable[['SB', 'nosotros']] = ['nosotros']
+        parseTable[['SB', 'flor']] = ['error']
+        parseTable[['SB', 'arroz']] = ['error']
+        parseTable[['SB', 'zapato']] = ['error']
+        parseTable[['SB', 'vestir']] = ['error']
+        parseTable[['SB', 'libro']] = ['error']
         parseTable[['SB', 'planta']] = ['error']
         parseTable[['SB', 'comer']] = ['error']
         parseTable[['SB', 'comprar']] = ['error']
@@ -201,12 +217,11 @@ const checkSentence = (sentence) => {
         parseTable[['SB', 'usar']] = ['error']
         parseTable[['SB', 'EOS']] = ['error']
 
-        parseTable[['NN', 'yo']] = ['yo']
-        parseTable[['NN', 'madre']] = ['madre']
-        parseTable[['NN', 'padre']] = ['padre']
-        parseTable[['NN', 'ellos']] = ['ellos']
-        parseTable[['NN', 'nosotros']] = ['nosotros']
-        parseTable[['NN', 'kerongsang']] = ['kerongsang']
+        parseTable[['NN', 'yo']] = ['error']
+        parseTable[['NN', 'madre']] = ['error']
+        parseTable[['NN', 'padre']] = ['error']
+        parseTable[['NN', 'ellos']] = ['eerror']
+        parseTable[['NN', 'nosotros']] = ['error']
         parseTable[['NN', 'flor']] = ['flor']
         parseTable[['NN', 'arroz']] = ['arroz']
         parseTable[['NN', 'zapato']] = ['zapato']
@@ -240,7 +255,7 @@ const checkSentence = (sentence) => {
         // Stack Initialization
         let stack = []
         stack.push('#')
-        stack.push('SB')
+        stack.push('S')
 
         // Input reading initialization
         let idxToken = 0
